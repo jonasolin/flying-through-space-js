@@ -45,8 +45,8 @@ space.Star = function() {
     this.id = starIndex;
 }
 
-space.DeleteStar = function(x, y, id){
-    if ( x > space.field.width | y > space.field.height ) {
+space.DeleteStar = function(x, y, r, id){
+    if (x + r < 0 | x > space.field.width | y > space.field.height){
         delete space.stars[id];
         space.numStars--;
     }
@@ -60,9 +60,10 @@ space.Star.prototype.Draw = function () {
     this.SY += this.SY / (50 / acceleration);
 
     this.age++;
-    this.radius = this.radius+0.001;
 
-    space.DeleteStar(this.X, this.Y, this.id);
+    this.radius = this.radius + 0.001
+
+    space.DeleteStar(this.X, this.Y, this.radius, this.id);
 
     space.context.fillStyle = this.color;
     space.context.beginPath();
@@ -96,7 +97,7 @@ space.init = function(f, c) {
     space.field = f;
     space.context = c;
     starsToDraw = (space.field.width * space.field.height) / 100;
-    setInterval(space.draw, 35);
+    setInterval(space.draw, 40);
 }
 
 module.exports = space;

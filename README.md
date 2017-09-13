@@ -1,6 +1,9 @@
-# Brunch app
+# Universal playground
 
 This is a HTML5 application, built with [Brunch](http://brunch.io).
+
+## Demo
+[https://jsfiddle.net/Jolorin/p0pa6j4k/1/](https://jsfiddle.net/Jolorin/p0pa6j4k/1/)
 
 ## Getting started
 * Install (if you don't have them):
